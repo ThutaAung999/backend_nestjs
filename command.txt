@@ -2,5 +2,10 @@ nest start
 nest start : dev
 nest start --watch
 
- nest g resource users
-
+nest g resource Todo
+nest g controler Host
+nest g middleware Logger
+nest g pipe pipes/JoiValidation
+nest g guard Auth
+nest g itc Logging
+nest g d Todo
