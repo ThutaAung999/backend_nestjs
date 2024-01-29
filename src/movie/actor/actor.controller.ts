@@ -8,7 +8,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { Actor } from '../../schemas/actor.schema';
-import { ActorService } from '../actor.service';
+import { ActorService } from './actor.service';
 import { CreateActorDto } from '../dto/create-actor.dto';
 import { UpdateActorDto } from '../dto/update-actor.dto';
 

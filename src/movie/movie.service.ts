@@ -4,8 +4,6 @@ import { UpdateMovieDto } from './dto/update-movie.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Movie, MovieDocument } from '../schemas/movie.schema';
 import { Model } from 'mongoose';
-import { CreateTodoDto } from '../todo/dto/create-todo.dto';
-import { Todo } from '../schemas/todo.schema';
 
 @Injectable()
 export class MovieService {
@@ -23,8 +21,9 @@ export class MovieService {
   async findAll() {
     return await this.movieModel
       .find()
-      .populate('actors')
-      .populate('directors')
+      //.populate('actors')
+      //.populate('directors')
+      //.populate('reviews')
       .exec();
   }
 
@@ -33,6 +32,7 @@ export class MovieService {
       .findById(id)
       .populate('actors')
       .populate('directors')
+      .populate('reviews')
       .exec();
   }
 
