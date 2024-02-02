@@ -13,12 +13,16 @@ import { logger } from './logger-tow/logger-tow.middleware';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MovieModule } from './movie/movie.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     TodoModule,
     MongooseModule.forRoot('mongodb://localhost/angular_1st_batch'),
     MovieModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [AppController, HostController, LibSpecificController],
   providers: [AppService],

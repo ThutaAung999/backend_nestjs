@@ -28,12 +28,14 @@ export class MovieService {
   }
 
   async findOne(id: string) {
-    return this.movieModel
-      .findById(id)
-      .populate('actors')
-      .populate('directors')
-      .populate('reviews')
-      .exec();
+    return (
+      this.movieModel
+        .findById(id)
+        .populate('actors')
+        .populate('directors')
+        //.populate('reviews')
+        .exec()
+    );
   }
 
   async update(id: string, updateMovieDto: UpdateMovieDto) {
