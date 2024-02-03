@@ -6,13 +6,16 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { Actor } from '../../schemas/actor.schema';
 import { ActorService } from './actor.service';
 import { CreateActorDto } from '../dto/create-actor.dto';
 import { UpdateActorDto } from '../dto/update-actor.dto';
+import { JwtGuard } from '../../auth/jwt.guard';
 
 @Controller('/api/actors')
+@UseGuards(JwtGuard)
 export class ActorController {
   constructor(private actorService: ActorService) {}
 

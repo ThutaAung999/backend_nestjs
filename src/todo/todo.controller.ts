@@ -25,13 +25,13 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 import { QueryTodoDto } from './dto/query-todo.dto';
 import { HttpExceptionFilter } from '../http-exception/http-exception.filter';
 import { DtoValidationWithClassValidatorPipe } from '../pipes/dto-validation_with_class-validator/dto-validation_with_class-validator.pipe';
-import { AuthGuard } from '../auth/auth.guard';
+import { JwtGuard } from '../auth/jwt.guard';
 import { LoggingInterceptor } from '../logging/logging.interceptor';
 import { TodoDecorator } from './todo.decorator';
 import { Todo } from '../schemas/todo.schema';
 
 @Controller('api/todo')
-//@UseGuards(AuthGuard)
+//@UseGuards(JwtGuard)
 @UseInterceptors(LoggingInterceptor)
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}

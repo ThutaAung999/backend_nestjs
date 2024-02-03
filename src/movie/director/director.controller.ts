@@ -6,14 +6,17 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 
 import { DirectorService } from './director.service';
 import { Director } from '../../schemas/director.schema';
 import { CreateDirectorDto } from '../dto/create-director.dto';
 import { UpdateDirectorDto } from '../dto/update-director.dto';
+import { JwtGuard } from '../../auth/jwt.guard';
 
 @Controller('/api/directors')
+@UseGuards(JwtGuard)
 export class DirectorController {
   constructor(private directorService: DirectorService) {}
 
