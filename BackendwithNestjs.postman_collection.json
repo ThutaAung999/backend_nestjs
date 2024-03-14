@@ -1,0 +1,943 @@
+{
+	"info": {
+		"_postman_id": "8f83100f-be57-4296-bab1-10503e08bdc6",
+		"name": "BackendwithNestjs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32177347"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "HomePage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "getAllTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCompletedTodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todo/completed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"completed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HostRequest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "account.example.com",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneTodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todo/65a7a34bd0bf5cdb4d3c0b6a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"65a7a34bd0bf5cdb4d3c0b6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTodo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Todo 8\",\r\n    \"completed\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/todo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTodo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Todo2 updated\",\r\n    \"completed\":true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/todo/65a7c52a6a43fc38fd9e744a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"65a7c52a6a43fc38fd9e744a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTodo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/todo/65a7d1763493a4da3e1f6065",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"65a7d1763493a4da3e1f6065"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "our own host",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/todo/query?id=3&title=NewTitle",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"query"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								},
+								{
+									"key": "title",
+									"value": "NewTitle"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wildcard",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/todo/abhellocd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"abhellocd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todo/problem",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todo",
+								"problem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LibSpecific",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/lib-specific",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lib-specific"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/lib-specific",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lib-specific"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Actor",
+					"item": [
+						{
+							"name": "GetAllActors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/actors",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"actors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOneActor",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/actors/65aa48c2ff9aeea11cf52909",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"actors",
+										"65aa48c2ff9aeea11cf52909"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteActor",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/actors/65ab826f1848778674c0d47a",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"actors",
+										"65ab826f1848778674c0d47a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateActor",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/actors/65aa48c2ff9aeea11cf52909",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"actors",
+										"65aa48c2ff9aeea11cf52909"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateActor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Galadriel\",\r\n    \"gender\":\"Female\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/actors",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"actors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "GetAllReviews",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/reviews",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOneReview",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/reviews/65b75a115964441c93b9a016",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews",
+										"65b75a115964441c93b9a016"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteReview",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/reviews/65b75d925436705b87215e0f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews",
+										"65b75d925436705b87215e0f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateReview",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 180,\r\n    \"review\": \"Best\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/reviews/65b75a115964441c93b9a016",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews",
+										"65b75a115964441c93b9a016"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateReview",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":99,\r\n    \"review\":\"Good\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/reviews",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Director",
+					"item": [
+						{
+							"name": "GetAllDirectors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/directors",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOneDirector",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/directors/65ab90a6a2dab885234f54a6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"directors",
+										"65ab90a6a2dab885234f54a6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteDirector",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/directors/65ab90a6a2dab885234f54a6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"directors",
+										"65ab90a6a2dab885234f54a6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateDirector",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/directors/65ab90a6a2dab885234f54a6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"directors",
+										"65ab90a6a2dab885234f54a6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateDirector",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Jခင်မောင်ဉီး စိုးသိန်းထွဋ်\",\r\n    \"gender\":\"Male\",\r\n    \"address\":\"Yangon\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/directors",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetAllMovies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjoiNjViYTFmOTA0MGIwNjAxNTI4YzVlNTU3IiwiaWF0IjoxNzA2OTQzOTczLCJleHAiOjE3MDY5NDQwMzN9.H_KileyOS1UvOYeI7-IO5H-yzzE-04-_dVTScO-5GTE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOneMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/65a92455ed60e0d730809ed4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"65a92455ed60e0d730809ed4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"GOT\",\r\n    \"year\":2017,\r\n    \"genres\":[\"Action\",\"Drama\"],\r\n    \"actors\":[\"65aba21427eabe21fc0ffcc7\",\"65aba22327eabe21fc0ffcc9\",\"65aba23727eabe21fc0ffccb\"],\r\n    \"directors\":[\"65aba3ee27eabe21fc0ffccd\",\"65aba40027eabe21fc0ffccf\",\"65aba40f27eabe21fc0ffcd1\"],\r\n    \"reviewers\":[\r\n        {\r\n            \"rating\":5,\r\n            \"review\":\"Good\"\r\n        },\r\n        {\r\n            \"rating\":15,\r\n            \"review\":\"Nice\"}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMovie",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"title\": \"Titanic Updated\",\r\n        \"year\": 2000,\r\n        \"genres\": [\r\n            \"Action\",\r\n            \"Drama\"\r\n        ],\r\n        \"actors\": [\"65ab65e1d658b7342b721e11\"],\r\n        \"directors\": [\"65aba85927eabe21fc0ffcda\"],\r\n        \"reviewers\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/65a922819bce506be92585c8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"65a922819bce506be92585c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMovie",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"title\": \"Titanic Updated\",\r\n        \"year\": 2000,\r\n        \"genres\": [\r\n            \"Action\",\r\n            \"Drama\"\r\n        ],\r\n        \"actors\": [\"65ab65e1d658b7342b721e11\"],\r\n        \"directors\": [\"65aba85927eabe21fc0ffcda\"],\r\n        \"reviewers\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/65a922819bce506be92585c8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"65a922819bce506be92585c8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

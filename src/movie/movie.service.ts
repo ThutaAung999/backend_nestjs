@@ -21,8 +21,8 @@ export class MovieService {
   async findAll() {
     return await this.movieModel
       .find()
-      //.populate('actors')
-      //.populate('directors')
+      .populate('actors')
+      .populate('directors')
       //.populate('reviews')
       .exec();
   }
